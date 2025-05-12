@@ -1,0 +1,17 @@
+------ Top 100 rows from each table -----
+SELECT * FROM Car LIMIT 100;
+SELECT * FROM Engine LIMIT 100;
+SELECT * FROM Transmission LIMIT 100;
+SELECT * FROM Drivetrain LIMIT 100;
+---- Join Statement to Select Top 100 Rows from Two Related Tables ------
+SELECT c.name, e.engine_type, t.type AS transmission_type
+FROM Car c
+JOIN Car_Engine ce ON c.car_id = ce.car_id
+JOIN Engine e ON ce.engine_id = e.engine_id
+JOIN Car_Transmission ct ON c.car_id = ct.car_id
+JOIN Transmission t ON ct.transmission_id = t.transmission_id
+LIMIT 100;
+------- Aggregate Function to Summarize the Dataset --------
+SELECT AVG(top
+::contentReference[oaicite:0]{index=0}
+ 

@@ -1,0 +1,20 @@
+CREATE ROLE readonly_audi;
+
+--- Grant SELECT on all tables and views ------
+GRANT SELECT ON Car TO readonly_audi;
+GRANT SELECT ON Engine TO readonly_audi;
+GRANT SELECT ON Transmission TO readonly_audi;
+GRANT SELECT ON Drivetrain TO readonly_audi;
+GRANT SELECT ON Car_Engine TO readonly_audi;
+GRANT SELECT ON Car_Transmission TO readonly_audi;
+GRANT SELECT ON Car_Drivetrain TO readonly_audi;
+GRANT SELECT ON vw_audi_car_details TO readonly_audi;
+--- Created user and assigned roles -----
+CREATE USER user_john IDENTIFIED BY 'securePassword1';
+CREATE USER user_sara IDENTIFIED BY 'securePassword2';
+CREATE USER user_lee IDENTIFIED BY 'securePassword3';
+-- These users only have read only permissions, cant insert, delete, or create =------
+GRANT readonly_audi TO user_john;
+GRANT readonly_audi TO user_sara;
+GRANT readonly_audi TO user_lee;
+

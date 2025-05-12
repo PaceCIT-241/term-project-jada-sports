@@ -1,0 +1,167 @@
+-- Insert Engine Data
+INSERT INTO Engine (engine_id, engine_type, displacement_liters, configuration, turbocharged)
+VALUES
+(1, 'V10', 5.2, 'Naturally Aspirated', FALSE),
+(2, 'V8', 4.0, 'Twin-Turbo', TRUE),
+(3, 'V10', 5.2, 'Naturally Aspirated', FALSE),
+(4, 'V6', 3.0, 'Supercharged', TRUE),
+(5, 'V8', 4.2, 'Naturally Aspirated', FALSE),
+(6, 'V10', 5.0, 'Naturally Aspirated', FALSE),
+(7, 'V6', 3.0, 'Turbocharged', TRUE),
+(8, 'V8', 4.0, 'Turbocharged', TRUE),
+(9, 'V12', 6.0, 'Naturally Aspirated', FALSE),
+(10, 'V6', 3.0, 'Turbocharged', TRUE),
+(11, 'Inline-5', 2.5, 'Turbocharged', TRUE),
+(12, 'V8', 4.0, 'Naturally Aspirated', FALSE),
+(13, 'Inline-4', 2.0, 'Turbocharged', TRUE),
+(14, 'V8', 4.0, 'Twin-Turbo', TRUE),
+(15, 'V10', 5.2, 'Naturally Aspirated', FALSE),
+(16, 'Inline-6', 3.0, 'Turbocharged', TRUE),
+(17, 'V8', 4.2, 'Naturally Aspirated', FALSE),
+(18, 'V10', 5.0, 'Naturally Aspirated', FALSE),
+(19, 'Inline-4', 2.5, 'Turbocharged', TRUE),
+(20, 'V6', 3.0, 'Turbocharged', TRUE);
+
+-- Insert Transmission Data
+INSERT INTO Transmission (transmission_id, type, gears)
+VALUES
+(1, 'Dual-Clutch', 7),
+(2, 'Manual', 6),
+(3, 'Dual-Clutch', 7),
+(4, 'Automatic', 8),
+(5, 'Dual-Clutch', 7),
+(6, 'Manual', 6),
+(7, 'Dual-Clutch', 7),
+(8, 'Automatic', 8),
+(9, 'Dual-Clutch', 7),
+(10, 'Manual', 6),
+(11, 'Automatic', 8),
+(12, 'Dual-Clutch', 7),
+(13, 'Manual', 6),
+(14, 'Automatic', 8),
+(15, 'Dual-Clutch', 7),
+(16, 'Manual', 6),
+(17, 'Dual-Clutch', 7),
+(18, 'Automatic', 8),
+(19, 'Manual', 6),
+(20, 'Dual-Clutch', 7);
+
+-- Insert Drivetrain Data
+INSERT INTO Drivetrain (drivetrain_id, type)
+VALUES
+(1, 'All-Wheel Drive'),
+(2, 'Rear-Wheel Drive'),
+(3, 'All-Wheel Drive'),
+(4, 'All-Wheel Drive'),
+(5, 'Rear-Wheel Drive'),
+(6, 'All-Wheel Drive'),
+(7, 'All-Wheel Drive'),
+(8, 'Rear-Wheel Drive'),
+(9, 'All-Wheel Drive'),
+(10, 'All-Wheel Drive'),
+(11, 'All-Wheel Drive'),
+(12, 'Rear-Wheel Drive'),
+(13, 'All-Wheel Drive'),
+(14, 'Rear-Wheel Drive'),
+(15, 'All-Wheel Drive'),
+(16, 'All-Wheel Drive'),
+(17, 'Rear-Wheel Drive'),
+(18, 'All-Wheel Drive'),
+(19, 'All-Wheel Drive'),
+(20, 'Rear-Wheel Drive');
+
+-- Insert Car Data
+INSERT INTO Car (car_id, name, year, top_speed_mph, acceleration_0_60_sec, horsepower, torque_lbft, production_units)
+VALUES
+(1, 'Audi R8 Decennium', 2019, 206, 3.1, 620, 413, NULL),
+(2, 'Audi R8 Performance', 2020, 204, 3.2, 602, 443, NULL),
+(3, 'Audi R8 Spyder V10 Performance', 2021, 203, 3.1, 602, 413, 222),
+(4, 'Audi S5', 2021, 174, 4.2, 354, 369, 200),
+(5, 'Audi RS5', 2022, 174, 3.9, 444, 442, 150),
+(6, 'Audi TT RS', 2022, 174, 3.6, 394, 354, 300),
+(7, 'Audi RS Q8', 2023, 190, 3.8, 591, 590, NULL),
+(8, 'Audi R8 V10 Performance Spyder', 2021, 202, 3.2, 602, 413, NULL),
+(9, 'Audi Q5 Sportback', 2022, 155, 4.5, 265, 273, NULL),
+(10, 'Audi R8 V10 Decennium', 2019, 206, 3.1, 620, 413, NULL),
+(11, 'Audi RS3', 2023, 180, 3.5, 400, 369, 222),
+(12, 'Audi S7', 2022, 190, 3.5, 444, 443, NULL),
+(13, 'Audi S8', 2023, 155, 3.9, 563, 590, 111),
+(14, 'Audi Q7 RS', 2023, 174, 4.3, 500, 500, NULL),
+(15, 'Audi S3', 2022, 155, 4.5, 305, 295, NULL),
+(16, 'Audi RS4 Avant', 2022, 155, 4.0, 444, 442, NULL),
+(17, 'Audi R8 V10 GT', 2023, 205, 3.0, 602, 413, NULL),
+(18, 'Audi RS Q3', 2023, 155, 4.4, 400, 369, NULL),
+(19, 'Audi RS e-tron GT', 2023, 156, 3.2, 637, 612, NULL),
+(20, 'Audi S8', 2023, 155, 3.7, 563, 590, NULL);
+
+-- Insert Car_Engine Data
+INSERT INTO Car_Engine (car_id, engine_id)
+VALUES
+(1, 1),
+(2, 2),
+(3, 1),
+(4, 4),
+(5, 5),
+(6, 7),
+(7, 2),
+(8, 1),
+(9, 3),
+(10, 1),
+(11, 2),
+(12, 2),
+(13, 3),
+(14, 2),
+(15, 4),
+(16, 2),
+(17, 1),
+(18, 2),
+(19, 4),
+(20, 2);
+
+-- Insert Car_Transmission Data
+INSERT INTO Car_Transmission (car_id, transmission_id)
+VALUES
+(1, 1),
+(2, 2),
+(3, 1),
+(4, 4),
+(5, 1),
+(6, 3),
+(7, 1),
+(8, 1),
+(9, 2),
+(10, 1),
+(11, 1),
+(12, 3),
+(13, 1),
+(14, 2),
+(15, 1),
+(16, 1),
+(17, 1),
+(18, 2),
+(19, 1),
+(20, 1);
+
+-- Insert Car_Drivetrain Data
+INSERT INTO Car_Drivetrain (car_id, drivetrain_id)
+VALUES
+(1, 1),
+(2, 1),
+(3, 1),
+(4, 2),
+(5, 1),
+(6, 1),
+(7, 1),
+(8, 2),
+(9, 1),
+(10, 1),
+(11, 1),
+(12, 2),
+(13, 1),
+(14, 2),
+(15, 1),
+(16, 2),
+(17, 1),
+(18, 1),
+(19, 2),
+(20, 1);

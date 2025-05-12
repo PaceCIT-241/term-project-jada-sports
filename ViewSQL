@@ -1,0 +1,23 @@
+CREATE VIEW vw_audi_car_details AS
+SELECT
+    c.car_id,
+    c.name AS car_name,
+    c.year,
+    c.top_speed_mph,
+    c.acceleration_0_60_sec,
+    c.horsepower,
+    c.torque_lbft,
+    e.engine_type,
+    e.displacement_liters,
+    e.configuration AS engine_config,
+    e.turbocharged,
+    t.type AS transmission_type,
+    t.gears AS transmission_gears,
+    d.type AS drivetrain_type
+FROM Car c
+JOIN Car_Engine ce ON c.car_id = ce.car_id
+JOIN Engine e ON ce.engine_id = e.engine_id
+JOIN Car_Transmission ct ON c.car_id = ct.car_id
+JOIN Transmission t ON ct.transmission_id = t.transmission_id
+JOIN Car_Drivetrain cd ON c.car_id = cd.car_id
+JOIN Drivetrain d ON cd.drivetrain_id = d.drivetrain_id;

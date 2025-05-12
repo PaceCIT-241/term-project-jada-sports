@@ -1,0 +1,53 @@
+CREATE TABLE Engine (
+    engine_id INT PRIMARY KEY,
+    engine_type VARCHAR(50) NOT NULL,
+    displacement_liters DECIMAL(3,1) NOT NULL,
+    configuration VARCHAR(50) NOT NULL,
+    turbocharged BOOLEAN NOT NULL
+);
+
+CREATE TABLE Transmission (
+    transmission_id INT PRIMARY KEY,
+    type VARCHAR(50) NOT NULL,
+    gears INT NOT NULL
+);
+
+CREATE TABLE Drivetrain (
+    drivetrain_id INT PRIMARY KEY,
+    type VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE Car (
+    car_id INT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    year INT NOT NULL,
+    top_speed_mph DECIMAL(5,2) NOT NULL,
+    acceleration_0_60_sec DECIMAL(4,2) NOT NULL,
+    horsepower INT NOT NULL,
+    torque_lbft INT NOT NULL,
+    production_units INT
+);
+
+CREATE TABLE Car_Engine (
+    car_id INT,
+    engine_id INT,
+    PRIMARY KEY (car_id, engine_id),
+    FOREIGN KEY (car_id) REFERENCES Car(car_id),
+    FOREIGN KEY (engine_id) REFERENCES Engine(engine_id)
+);
+
+CREATE TABLE Car_Transmission (
+    car_id INT,
+    transmission_id INT,
+    PRIMARY KEY (car_id, transmission_id),
+    FOREIGN KEY (car_id) REFERENCES Car(car_id),
+    FOREIGN KEY (transmission_id) REFERENCES Transmission(transmission_id)
+);
+
+CREATE TABLE Car_Drivetrain (
+    car_id INT,
+    drivetrain_id INT,
+    PRIMARY KEY (car_id, drivetrain_id),
+    FOREIGN KEY (car_id) REFERENCES Car(car_id),
+    FOREIGN KEY (drivetrain_id) REFERENCES Drivetrain(drivetrain_id)
+);
